@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap");
+@import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────
    Custom Font – Cinzel (local)
@@ -238,13 +238,13 @@ body {
 ───────────────────────────────────────────────────────── */
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-in-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(40px);
   }
 
   to {
