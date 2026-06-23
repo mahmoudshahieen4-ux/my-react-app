@@ -1,4 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import sung from "../assets/images/purple.png";
+import cha from "../assets/images/cyan.png";
+import goto from "../assets/images/orange.png";
+import igris from "../assets/images/igris-red.png";
+
+// ربط كل معرف (id) بمتغير الصورة المستوردة أعلاه
+const CHARACTER_IMAGES: Record<string, string> = {
+  sung,
+  cha,
+  goto,
+  igris,
+};
 
 const CHARACTERS = [
   {
@@ -108,9 +120,9 @@ function CharacterCard({ char, isActive, onClick }: {
       />
 
       <div className="px-5 py-5 flex items-center gap-4">
-        {/* Avatar circle */}
+        {/* Avatar Image / Circle fallback */}
         <div
-          className={`shrink-0 w-12 h-12 rounded-sm flex items-center justify-center text-base font-black transition-all duration-300 bg-gradient-to-br ${char.imgBg}`}
+          className={`shrink-0 w-12 h-12 rounded-sm flex items-center justify-center text-base font-black transition-all duration-300 bg-gradient-to-br ${char.imgBg} overflow-hidden`}
           style={{
             border: `1px solid ${char.borderColor}`,
             boxShadow: isActive ? `0 0 16px ${char.glowColor}` : "none",
@@ -118,7 +130,15 @@ function CharacterCard({ char, isActive, onClick }: {
             fontFamily: "'CinzelLocal', serif",
           }}
         >
-          {char.initial}
+          {CHARACTER_IMAGES[char.id] ? (
+            <img 
+              src={CHARACTER_IMAGES[char.id]} 
+              alt={char.name} 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            char.initial
+          )}
         </div>
 
         <div className="flex-1 min-w-0">
@@ -242,9 +262,9 @@ export default function CharactersSection() {
             />
 
             <div className="p-8 sm:p-10 flex flex-col sm:flex-row gap-8 items-start">
-              {/* Big avatar */}
+              {/* Big avatar image */}
               <div
-                className={`shrink-0 w-28 h-28 sm:w-36 sm:h-36 rounded-sm flex items-center justify-center text-3xl sm:text-4xl font-black bg-gradient-to-br ${char.imgBg}`}
+                className={`shrink-0 w-28 h-28 sm:w-36 sm:h-36 rounded-sm flex items-center justify-center text-3xl sm:text-4xl font-black bg-gradient-to-br ${char.imgBg} overflow-hidden`}
                 style={{
                   border: `1px solid ${char.borderColor}`,
                   boxShadow: `0 0 40px ${char.glowColor}`,
@@ -252,7 +272,15 @@ export default function CharactersSection() {
                   fontFamily: "'CinzelLocal', serif",
                 }}
               >
-                {char.initial}
+                {CHARACTER_IMAGES[char.id] ? (
+                  <img 
+                    src={CHARACTER_IMAGES[char.id]} 
+                    alt={char.name} 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  char.initial
+                )}
               </div>
 
               <div className="flex-1">
