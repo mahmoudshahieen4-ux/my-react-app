@@ -181,16 +181,9 @@ export default function HeroSection() {
                     <img
                         src={soloLogo}
                         alt="Solo Leveling"
-                        className="w-[180px] sm:w-[220px] md:w-[260px] object-contain opacity-0 animate-fade-in-up [animation-delay:0.2s] [animation-fill-mode:forwards] drop-shadow-[0_0_18px_rgba(139,92,246,0.5)]"
+                        className="w-[180px] sm:w-[220px] md:w-[680px] object-contain opacity-0 animate-fade-in-up [animation-delay:0.2s] [animation-fill-mode:forwards] drop-shadow-[0_0_18px_rgba(139,92,246,0.5)]"
                     />
 
-                    {/* Main title */}
-                    <h1
-                        className="solo-leveling-title opacity-0 animate-fade-in-up [animation-delay:0.35s] [animation-fill-mode:forwards]"
-                        style={{ textAlign: "inherit" }}
-                    >
-                        SOLO<br />LEVELING
-                    </h1>
 
                     {/* Subtitle */}
                     <p
